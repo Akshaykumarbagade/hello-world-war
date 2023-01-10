@@ -4,7 +4,7 @@ pipeline {
         stage('my Build') {
             steps {
                 sh "echo ${BUILD_VERSION}"
-                sh 'docker build -t tomcat_build .'
+                 sh 'docker build -t tomcat_build:${BUILD_VERSION} --build-arg BUILD_VERSION=${BUILD_VERSION} .'
             }
         }  
         stage('publish stage') {
