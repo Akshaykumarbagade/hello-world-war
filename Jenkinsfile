@@ -13,7 +13,6 @@ pipeline {
                 sh "docker login -u akshaybagadehub -p Docker@123"
                 sh 'docker tag tomcat_build:1.0 akshaybagadehub/my_tomcat:1.0'
                 sh 'docker push akshaybagadehub/my_tomcat:1.0'
-                }
             }
         } 
         stage( 'my deploy' ) {
