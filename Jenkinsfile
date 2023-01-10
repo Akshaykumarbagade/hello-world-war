@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'sla'}
+    agent {label 'slave1'}
     stages {
         stage('my Build') {
             steps {
@@ -18,7 +18,7 @@ pipeline {
             }
         } 
         stage( 'my deploy' ) {
-        agent {label 'ansible'} 
+        agent {label 'slave2'} 
             steps {
                sh 'docker pull prajwal1327/mytomcat:${BUILD_VERSION}'
                sh 'docker rm -f mytomcat'
